@@ -1,108 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Julian Triveri Portfolio</title>
+		<link rel="stylesheet" href="/resources/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div id="backgroundGlyph"></div>
 
-	<meta charset="UTF-8">
-	<title>Julian Triveri Portfolio</title>
-	<link rel="stylesheet" href="/resources/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<a href="/mobilenav.html" id="navmobile"> Menu </a>
+		<iframe id="navframe" src="/nav.html"></iframe>
 
-</head>
-<body>
+		<main>
+			<h1>Lasertag</h1>
+			<h3>
+				Turn any space into a laser tag arena with a single button press
+				<p>
+					<img
+						class="software-icon"
+						src="/resources/icons/meta.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/unity.png"
+					/>
+					<img class="software-icon" src="/resources/icons/git.png" />
+				</p>
+			</h3>
 
-<div id="backgroundGlyph"></div>
-
-<a href="/mobilenav.html" id="navmobile"> Menu </a>
-<iframe id="navframe" src="/nav.html"></iframe>
-
-<main>
-
-	<h1>Lasertag</h1>
-	<h3>
-		Turn any space into a laser tag arena with a single button press
-		<p>
-		<img class="software-icon" src="/resources/icons/meta.png">
-		<img class="software-icon" src="/resources/icons/unity.png">
-		<img class="software-icon" src="/resources/icons/git.png">
-	</h3>
-	
-	<div class="webvid">
-		<iframe src="https://player.vimeo.com/video/1071128174?h=b5528c5699
+			<div class="webvid">
+				<iframe
+					src="https://player.vimeo.com/video/1071128174?h=b5528c5699
 		?h=dddc621&autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
-		allow="autoplay; fullscreen; picture-in-picture" 
-		style = "height:100%;"allowfullscreen></iframe>
-	</div>
-	
-	<p>
-		A multiplayer mixed reality game that 'just works'
-		and requires minimal setup.
-		
-	<ul>
-		<li>1. Everyone puts on their headset
-		<li>2. Everyone connects to the same WiFi network
-		<li>3. Everyone launches the app
-		<li>4. One person presses the 'host' button
-	</ul>
-			
-	<p><h3><a href="https://anagly.ph" target="_blank">
-	Website ➔</a></h3>
-	<p><h3><a href="https://github.com/anaglyphs/lasertag" target="_blank">
-	GitHub repo ➔</a></h3>
-	
-	<h2 id="scanning">Continuous environment scanning</h2>
-	
-	<div class="webvid verticalvid">
-		<iframe src="https://player.vimeo.com/video/1081544753?
+					allow="autoplay; fullscreen; picture-in-picture"
+					style="height: 100%"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				A multiplayer mixed reality game that 'just works' and requires
+				minimal setup.
+			</p>
+
+			<ul>
+				<li>1. Everyone puts on their headset</li>
+				<li>2. Everyone connects to the same WiFi network</li>
+				<li>3. Everyone launches the app</li>
+				<li>4. One person presses the 'host' button</li>
+			</ul>
+
+			<p></p>
+			<h3>
+				<a href="https://anaglyph.dev" target="_blank"> Website ➔</a>
+			</h3>
+			<p></p>
+			<h3>
+				<a href="https://github.com/anaglyphs/lasertag" target="_blank">
+					GitHub repo ➔</a
+				>
+			</h3>
+
+			<h2 id="scanning">Continuous environment scanning</h2>
+
+			<div class="webvid verticalvid">
+				<iframe
+					src="https://player.vimeo.com/video/1081544753?
 		autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
-		allow="autoplay; fullscreen; picture-in-picture" 
-		style = "height:100%;"allowfullscreen></iframe>
-	</div>
-	
-	<p>
-		The game continuously scans players' environment 
-		without any prior setup.
-		This reduces friction & time-to-fun and means the game
-		responds to environment changes (i.e. doors opening and closing)
-	
-	<p>
-		This works by projecting depth frames
-		into a large TSDF 3D texture.
-		Bullets raymarch through the TSDF to detect collisions.
-		
-	<p>
-		I'd eventually like to use the TSDF for 
-		multiplayer localization and drift correction, but I'm still
-		getting a handle on some necessary mathematics.
-		
-	<p>
-		While Lasertag doesn't yet feature this,
-		I'm also experimenting with meshing 
-		for use with physics & NPC pathfinding.
-		
-	<p>
-		<a href="https://www.uploadvr.com/developer-implemented-continuous-scene-meshing-quest-3-lasertag/"
-		target="_blank"> UploadVR covered this in an article ➔</a>
-	
-	<h2 id="depth-lighting">Environment shading</h2>
-	
-	<div class="webvid">
-		<iframe src="https://www.youtube.com/embed/yxDhCg-q0JU?t=26s"
-			allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-			allowfullscreen></iframe>
-	</div>
-	
-	<p>
-		Laser bullets glow and cast light on the real environment using inverted spheres 
-		that sample environment depth & normals. 
-	
-	<p>
-		Because they're alpha-blended and often cover the entire
-		view, these can cause frame drops. I'm investigating faster
-		techniques.
-	</p>
-	
+					allow="autoplay; fullscreen; picture-in-picture"
+					style="height: 100%"
+					allowfullscreen
+				></iframe>
+			</div>
 
-</main>
+			<p>
+				The game continuously scans players' environment without any
+				prior setup. This reduces friction & time-to-fun and means the
+				game responds to environment changes (i.e. doors opening and
+				closing)
+			</p>
 
-</body>
+			<p>
+				This works by projecting depth frames into a large TSDF 3D
+				texture. Bullets raymarch through the TSDF to detect collisions.
+			</p>
+
+			<p>
+				I'd eventually like to use the TSDF for multiplayer localization
+				and drift correction, but I'm still getting a handle on some
+				necessary mathematics.
+			</p>
+
+			<p>
+				While Lasertag doesn't yet feature this, I'm also experimenting
+				with meshing for use with physics & NPC pathfinding.
+			</p>
+
+			<p>
+				<a
+					href="https://www.uploadvr.com/developer-implemented-continuous-scene-meshing-quest-3-lasertag/"
+					target="_blank"
+				>
+					UploadVR covered this in an article ➔</a
+				>
+			</p>
+
+			<h2 id="depth-lighting">Environment shading</h2>
+
+			<div class="webvid">
+				<iframe
+					src="https://www.youtube.com/embed/yxDhCg-q0JU?t=26s"
+					allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				Laser bullets glow and cast light on the real environment using
+				inverted spheres that sample environment depth & normals.
+			</p>
+
+			<p>
+				Because they're alpha-blended and often cover the entire view,
+				these can cause frame drops. I'm investigating faster
+				techniques.
+			</p>
+		</main>
+	</body>
 </html>
