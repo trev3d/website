@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Julian Triveri Portfolio</title>
+		<link rel="stylesheet" href="/resources/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div id="backgroundGlyph"></div>
+
+		<a href="/mobilenav.html" id="navmobile"> Menu </a>
+		<iframe id="navframe" src="/nav.html"></iframe>
+
+		<main>
+			<h1>Wizard Tag</h1>
+			<h3>
+				Cast spells at your friends with virtual magic wands and your
+				voice
+				<p>
+					<img
+						class="software-icon"
+						src="/resources/icons/meta.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/unity.png"
+					/>
+					<img class="software-icon" src="/resources/icons/git.png" />
+				</p>
+			</h3>
+
+			<div class="webvid">
+				<iframe
+					src="https://player.vimeo.com/video/1112789678
+		?autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
+					allow="autoplay; fullscreen; picture-in-picture"
+					style="height: 100%"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				A fork of <a href="lasertag.html">Lasertag</a> created for
+				Purdue University's student orientation event. Much of the
+				technology in this game, such as the live envrionment scanning
+				and lighting effects, is detailed there.
+			</p>
+
+			<p>
+				Players yell one of three spells ('fireball', 'lightning', or
+				'shield') and compete to score the most elimintations against
+				their opposing team. I use
+				<a href="https://alphacephei.com/vosk/" target="_blank"
+					>Vosk ➔</a
+				>, an on-device speech recognition model/library, to detect
+				spoken spells. While Vosk isn't as responsive as a bespoke
+				'wake-work' model might be, latency is still low enough for the
+				game to feel suitably responsive.
+			</p>
+
+			<p>
+				Purdue University's
+				<a
+					href="https://centers.purdue.edu/fusion-studio/"
+					target="_blank"
+					>Fusion Studio ➔
+				</a>
+				funded this project with a grant as part of their new student
+				orientation
+				<a
+					href="https://centers.purdue.edu/fusion-studio/bgr-entertainment-challenge/"
+					target="_blank"
+					>Entertainment Challenge ➔</a
+				>
+			</p>
+		</main>
+	</body>
+</html>
