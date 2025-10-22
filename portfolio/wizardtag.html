@@ -15,8 +15,8 @@
 		<main>
 			<h1>Wizardtag</h1>
 			<h3>
-				Cast magic spells with your voice and duel your friends in a
-				mixed reality wizard battle
+				Cast fireballs and lightning bolts at your friends in mixed
+				reality
 				<p>
 					<img
 						class="software-icon"
@@ -41,12 +41,15 @@
 			</div>
 
 			<p>
-				This game is a fork of
-				<a href="lasertag.html">Lasertag</a> created for Purdue
-				University's new student orientation. All of the tech in this
-				game, such as the live envrionment scanning and environment
-				lighting effects, comes from that project.
+				This game is a fork of the
+				<a href="lasertag.html">Lasertag project</a> created
+				specifically for Purdue University's student orientation event.
+				It brings all the same features of the Lasertag game, including
+				live environment scanning and environment lighting effects, but
+				swaps out the laser guns for voice-controlled magic wands.
 			</p>
+
+			<h2>Features</h2>
 
 			<a href="wizardtag/zap.png" target="_blank"
 				><img src="wizardtag/zap.png"
@@ -55,30 +58,52 @@
 			<p>
 				Players yell one of three spells − fireball, lightning, or
 				shield − and compete to score the most eliminations against the
-				opposing team.
-			</p>
-			<p>
-				I use
-				<a href="https://alphacephei.com/vosk/" target="_blank"
-					>Vosk ➔</a
-				>, an on-device speech recognition model, to detect magic spell
-				commands. While Vosk isn't as responsive as a bespoke wake-word
-				model might be, latency is still low enough for spells to feel
-				suitably responsive.
+				opposing team in two minutes.
 			</p>
 
-			<a href="wizardtag/pose.jpg" target="_blank"
-				><img src="wizardtag/pose.jpg"
+			<p>
+				For spell speech recognition, I used
+				<a href="https://alphacephei.com/vosk/" target="_blank"
+					>Vosk ➔</a
+				>, an on-device speech recognition model. While Vosk isn't as
+				responsive as a bespoke wake-word model might be, latency is
+				still low enough for spells to feel suitably responsive.
+			</p>
+
+			<a href="wizardtag/tag.png" target="_blank"
+				><img src="wizardtag/tag.png"
 			/></a>
 
 			<p>
-				I read AprilTags to spatially align headsets to the room and
-				each other. Each headset finds the 'best fit' between their own
-				tag readings against corresponding canonical poses, spatially
-				anchoring virtual elements like respawn points and aligning each
-				headset's coordinate space. This is faster and more robust than
-				using Meta's spatial anchors, which are prone to drift over
-				time.
+				For consistent spatial alignment, I used AprilTags. Each headset
+				finds the best fit between its own noisy tag readings and
+				corresponding known correct poses, spatially anchoring virtual
+				elements like respawn points and aligning each player's
+				coordinate space.
+			</p>
+			<p>
+				For my purposes, this was faster and more robust than using
+				Meta's spatial anchors, which sometimes fail to localize and are
+				prone to drift over time.
+			</p>
+
+			<h2>Help from friends</h2>
+
+			<a href="wizardtag/bgr poster.png" target="_blank"
+				><img src="wizardtag/bgr poster.png"
+			/></a>
+
+			<p>
+				Friends and I themed the event as a magic dueling class as part
+				of a fictional Harry-Potter-esque wizarding school version of
+				Purdue. I commissioned a friend to draw this poster, and another
+				friend played the role of the professor, giving a 'lesson' on
+				how to cast spells.
+			</p>
+
+			<p>
+				While I did everything on the developement side, the event
+				itself would not have been a success without their help.
 			</p>
 
 			<h2>Credits</h2>
