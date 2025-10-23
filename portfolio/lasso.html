@@ -1,106 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Julian Triveri Portfolio</title>
+		<link rel="stylesheet" href="/resources/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div id="backgroundGlyph"></div>
 
-	<meta charset="UTF-8">
-	<title>Julian Triveri Portfolio</title>
-	<link rel="stylesheet" href="/resources/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<a href="/mobilenav.html" id="navmobile"> Menu </a>
+		<iframe id="navframe" src="/nav.html"></iframe>
 
-</head>
-<body>
+		<main>
+			<h1>Global game jam 2024</h1>
+			<h3>
+				Made in 48 hours by a team of 3
+				<p>
+					<img
+						class="software-icon"
+						src="/resources/icons/blender.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/unity.png"
+					/>
+					<img class="software-icon" src="/resources/icons/git.png" />
+					<img
+						class="software-icon"
+						src="/resources/icons/meta.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/polyhaven.png"
+					/>
+				</p>
+			</h3>
 
-<div id="backgroundGlyph"></div>
-
-<a href="/mobilenav.html" id="navmobile"> Menu </a>
-<iframe id="navframe" src="/nav.html"></iframe>
-
-<main>
-
-	<h1>Global game jam 2024</h1>
-	<h3>
-		Made in 48 hours by a team of 3
-		<p>
-		<img class="software-icon" src="/resources/icons/blender.png">
-		<img class="software-icon" src="/resources/icons/unity.png">
-		<img class="software-icon" src="/resources/icons/git.png">
-		<img class="software-icon" src="/resources/icons/meta.png">
-		<img class="software-icon" src="/resources/icons/polyhaven.png">
-	</h3>
-	
-	
-	<div class="webvid verticalvid">
-		<iframe src="https://player.vimeo.com/video/914606490?h=dddc621
+			<div class="webvid verticalvid">
+				<iframe
+					src="https://player.vimeo.com/video/914606490?h=dddc621
 		&autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
-		allow="autoplay; fullscreen; picture-in-picture" 
-		style = "height:100%;"allowfullscreen></iframe>
-	</div>
-	
-	<p>
-		Responsible for the lasso manipulation & interaction as well as the environment graphics.
-		Made together with 
-		<a href="https://jake-white.github.io/" target="_blank">
-		Jake White  ➔</a>
-		and 
-		<a href="https://www.rcac.purdue.edu/about/staff/gtakahas" target="_blank">
-		George Takahashi  ➔</a>,
-		this is a game we call <i>Learn the Ropes</i>.
-	</p>
-	<p>
-		Part of its namesake comes from its admittedly difficult technique-based gameplay.
-		The goal is to wrangle in antagonistic clowns with your trusty lasso.
-	</p>
-	
-	<h2>Lasso interaction</h2>
-	
-	<p>
-		<a href="http://obi.virtualmethodstudio.com/" target="_blank">
-		Obi Rope  ➔</a>
-		is responsible for the rope physics. 
-	</p>
-	
-	<p>
-		A custom physics constraint lets the rope 
-		slip through your hands when you're not gripping it. 
-		You manipulate it with natural hand gestures.
-	</p>
-	
-	<a href="lasso/playing.jpg" target="_blank"><img src="lasso/playing.jpg"></a>
-	
-	<p>
-		Lasso end's speed controls volume and pitch of a spatial 'swoosh' 
-		sound, providing natural awareness of the rope's speed and position
-		in lieu of force feedback.
-		I love hearing it whiz around my head.
-	</p>
-	
-	<h2>Environment</h2>
-	
-	<a href="lasso/scene.png" target="_blank"><img src="lasso/scene.png"></a>
-	
-	<p>
-		Terrain is just a 360 CC0 environment from 
-		<a href="https://polyhaven.com/" target="_blank">PolyHaven  ➔</a>
-		reprojected onto a mesh initially generated using 
-		<a href="https://github.com/isl-org/ZoeDepth" target="_blank">ZoeDepth  ➔</a>.
-		This gives the terrain just enough depth to look
-		convincing as long as you don't stray too far from the center.
-	</p>
-	<p>
-		Because of how simple the graphics are, the game renders at a 
-		crisp 3000x3000+ resolution.
-	</p>
-	
-	<h2>Download &amp; source</h2>
-	<p>
-		You can download the game for Oculus Quest from  
-		<a href="https://github.com/Clownboys/lasso" target="_blank">
-		Github ➔</a> or 
-		<a href="https://globalgamejam.org/games/2024/learn-ropes-1" target="_blank">
-		Global Game Jam ➔</a>.
-	</p>
-	
-</main>
+					allow="autoplay; fullscreen; picture-in-picture"
+					style="height: 100%"
+					allowfullscreen
+				></iframe>
+			</div>
 
-</body>
+			<p>
+				Responsible for the lasso manipulation & interaction as well as
+				the environment graphics. Made together with
+				<a href="https://jake-white.github.io/" target="_blank">
+					Jake White ➔</a
+				>
+				and
+				<a
+					href="https://www.rcac.purdue.edu/about/staff/gtakahas"
+					target="_blank"
+				>
+					George Takahashi ➔</a
+				>, this is a game we call <i>Learn the Ropes</i>.
+			</p>
+			<p>
+				Part of its namesake comes from its admittedly difficult
+				technique-based gameplay. The goal is to wrangle in antagonistic
+				clowns with your trusty lasso.
+			</p>
+
+			<h2>Lasso interaction</h2>
+
+			<p>
+				<a href="http://obi.virtualmethodstudio.com/" target="_blank">
+					Obi Rope ➔</a
+				>
+				is responsible for the rope physics.
+			</p>
+
+			<p>
+				A custom physics constraint lets the rope slip through your
+				hands when you're not gripping it. You manipulate it with
+				natural hand gestures.
+			</p>
+
+			<a href="lasso/playing.jpg" target="_blank"
+				><img src="lasso/playing.jpg"
+			/></a>
+
+			<p>
+				Lasso end's speed controls volume and pitch of a spatial
+				'swoosh' sound, providing natural awareness of the rope's speed
+				and position in lieu of force feedback. I love hearing it whiz
+				around my head.
+			</p>
+
+			<h2>Environment</h2>
+
+			<a href="lasso/scene.png" target="_blank"
+				><img src="lasso/scene.png"
+			/></a>
+
+			<p>
+				Terrain is just a 360 CC0 environment from
+				<a href="https://polyhaven.com/" target="_blank">PolyHaven ➔</a>
+				reprojected onto a mesh initially generated using
+				<a href="https://github.com/isl-org/ZoeDepth" target="_blank"
+					>ZoeDepth ➔</a
+				>. This gives the terrain just enough depth to look convincing
+				as long as you don't stray too far from the center.
+			</p>
+			<p>
+				Because of how simple the graphics are, the game renders at a
+				crisp 3000x3000+ resolution.
+			</p>
+
+			<h2>Download &amp; source</h2>
+			<p>
+				You can download the game for Oculus Quest from
+				<a href="https://github.com/Clownboys/lasso" target="_blank">
+					Github ➔</a
+				>
+				or
+				<a
+					href="https://globalgamejam.org/games/2024/learn-ropes-1"
+					target="_blank"
+				>
+					Global Game Jam ➔</a
+				>.
+			</p>
+		</main>
+	</body>
 </html>

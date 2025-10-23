@@ -1,104 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Julian Triveri Portfolio</title>
+		<link rel="stylesheet" href="/resources/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div id="backgroundGlyph"></div>
 
-	<meta charset="UTF-8">
-	<title>Julian Triveri Portfolio</title>
-	<link rel="stylesheet" href="/resources/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<a href="/mobilenav.html" id="navmobile"> Menu </a>
+		<iframe id="navframe" src="/nav.html"></iframe>
 
-</head>
-<body>
+		<main>
+			<h1>Mocap sabers</h1>
 
-<div id="backgroundGlyph"></div>
+			<h3>
+				Beat up your friend with foam swords on an OptiTrack stage
+				<p>
+					<img
+						class="software-icon"
+						src="/resources/icons/blender.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/unity.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/motive.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/meta.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/polyhaven.png"
+					/>
+					<img
+						class="software-icon"
+						src="/resources/icons/ambientcg.png"
+					/>
+				</p>
+			</h3>
 
-<a href="/mobilenav.html" id="navmobile"> Menu </a>
-<iframe id="navframe" src="/nav.html"></iframe>
+			<div class="webvid">
+				<iframe
+					src="https://www.youtube.com/embed/IgpgE4URJyo"
+					allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+					allowfullscreen
+				></iframe>
+			</div>
+			<p>
+				Prototype game where motion captured players and swords drive VR
+				visuals.
+			</p>
 
-<main>
+			<a href="mocap/fight2.png" target="_blank"
+				><img src="mocap/fight2.png"
+			/></a>
 
-	<h1>Mocap sabers</h1>
+			<br />
+			<br />
 
-	<h3>
-		Beat up your friend with foam swords on an OptiTrack stage
-		<p>
-		<img class="software-icon" src="/resources/icons/blender.png">
-		<img class="software-icon" src="/resources/icons/unity.png">
-		<img class="software-icon" src="/resources/icons/motive.png">
-		<img class="software-icon" src="/resources/icons/meta.png">
-		<img class="software-icon" src="/resources/icons/polyhaven.png">
-		<img class="software-icon" src="/resources/icons/ambientcg.png">
-	</h3>
+			<div>
+				<blockquote class="twitter-tweet tw-align-center">
+					<p lang="en" dir="ltr">
+						I work with some pretty awesome people. VR light saber
+						battles at the
+						<a
+							href="https://twitter.com/PurdueRCAC?ref_src=twsrc%5Etfw"
+							>@PurdueRCAC</a
+						>
+						Envision Center 20th anniversary open house today 🤖 ⚔️
+						<br /><br />Best use of PVC pipe and pool noodles that
+						I’ve ever seen, but the VR goggles and mocap suit
+						obviously take it to a whole other level 👌🏼
+						<a href="https://t.co/jqHgVm2TUJ"
+							>pic.twitter.com/jqHgVm2TUJ</a
+						>
+					</p>
+					&mdash; Paul Branham (@BoilerPaulie)
+					<a
+						href="https://twitter.com/BoilerPaulie/status/1780627497240895618?ref_src=twsrc%5Etfw"
+						>April 17, 2024</a
+					>
+				</blockquote>
+				<script
+					async
+					src="https://platform.twitter.com/widgets.js"
+					charset="utf-8"
+				></script>
+			</div>
 
-	<div class="webvid">
-		<iframe src="https://www.youtube.com/embed/IgpgE4URJyo"
-			allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-			allowfullscreen></iframe>
-	</div>
-	<p>
-		Prototype game where motion captured players and swords
-		drive VR visuals.
-	</p>
+			<h2>Tracking &amp; calibration</h2>
 
-	<a href="mocap/fight2.png" target="_blank"><img src="mocap/fight2.png"></a>
+			<a href="mocap/fight.jpg" target="_blank"
+				><img src="mocap/fight.jpg"
+			/></a>
 
-	<br>
-	<br>
+			<p>
+				OptiTrack's official plugin for Unity does not support 1:1
+				skeletal tracking or Android &amp; Meta Quest. I couldn't use it
+				for this.
+			</p>
 
-	<div>
-	<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">I work with some pretty awesome people. VR light saber battles at the <a href="https://twitter.com/PurdueRCAC?ref_src=twsrc%5Etfw">@PurdueRCAC</a> Envision Center 20th anniversary open house today 🤖 ⚔️ <br><br>Best use of PVC pipe and pool noodles that I’ve ever seen, but the VR goggles and mocap suit obviously take it to a whole other level 👌🏼 <a href="https://t.co/jqHgVm2TUJ">pic.twitter.com/jqHgVm2TUJ</a></p>&mdash; Paul Branham (@BoilerPaulie) <a href="https://twitter.com/BoilerPaulie/status/1780627497240895618?ref_src=twsrc%5Etfw">April 17, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	</div>
+			<p>
+				I instead modified an old
+				<a
+					href="https://github.com/XmanLCH/MotiveDirect"
+					target="_blank"
+				>
+					third-party plugin compatible with Android ➔</a
+				>
+				to support 1:1 skeletal tracking.
+			</p>
 
-	<h2>Tracking &amp; calibration</h2>
+			<a href="mocap/swords.jpg" target="_blank"
+				><img src="mocap/swords.jpg"
+			/></a>
 
-	<a href="mocap/fight.jpg" target="_blank"><img src="mocap/fight.jpg"></a>
+			<p>
+				The markers on the headset are only for initial stage
+				calibration. I still rely on Quest's native tracking.
+			</p>
 
-	<p>
-		OptiTrack's
-		official plugin for Unity does not support 1:1 skeletal
-		tracking or Android &amp; Meta Quest.
-		I couldn't use it for this.
+			<a href="mocap/snapshot1.png" target="_blank"
+				><img src="mocap/snapshot1.png"
+			/></a>
 
-	<p>
-		I instead modified an old
-		<a href="https://github.com/XmanLCH/MotiveDirect" target="_blank">
-			third-party plugin compatible with Android ➔</a>
-		to support 1:1 skeletal tracking.
-	</p>
+			<a href="mocap/scene1.png" target="_blank"
+				><img src="mocap/scene1.png"
+			/></a>
 
-	<a href="mocap/swords.jpg" target="_blank"><img src="mocap/swords.jpg"></a>
+			<p>
+				I threw together several CC0 assets from
+				<a href="https://polyhaven.com" target="_blank"
+					>PolyHaven.com ➔</a
+				>
+				and
+				<a href="https://ambientcg.com" target="_blank"
+					>AmbientCG.com ➔</a
+				>
+				to create a placeholder lava planet environment. The robot model
+				is a
+				<a
+					href="https://assetstore.unity.com/packages/3d/characters/robots/robot-kyle-urp-4696"
+					target="_blank"
+				>
+					Unity standard asset ➔</a
+				>.
+			</p>
 
-	<p>
-		The markers on the headset are only for initial stage calibration.
-		I still rely on Quest's native tracking.
-	</p>
-
-
-	<a href="mocap/snapshot1.png" target="_blank"><img src="mocap/snapshot1.png"></a>
-
-	<a href="mocap/scene1.png" target="_blank"><img src="mocap/scene1.png"></a>
-
-	<p>
-		I threw together several CC0 assets from
-		<a href="https://polyhaven.com" target="_blank">PolyHaven.com ➔</a>
-		and <a href="https://ambientcg.com" target="_blank">AmbientCG.com ➔</a>
-		to create a placeholder lava planet environment.
-		The robot model is a
-		<a href="https://assetstore.unity.com/packages/3d/characters/robots/robot-kyle-urp-4696" target="_blank">
-			Unity standard asset ➔</a>.
-	</p>
-
-	<h2>Thanks</h2>
-	<p>
-		Huge thanks to
-		<a href="https://fizzyapple12.com/" target="_blank">Hazel ➔</a>
-		&
-		<a href="https://www.matthewstanciu.com/" target="_blank">Matthew ➔</a>
-		for testing and helping buy
-		pool noodles and PVC pipe.
-	</p>
-
-</main>
-
-</body>
+			<h2>Thanks</h2>
+			<p>
+				Huge thanks to
+				<a href="https://fizzyapple12.com/" target="_blank">Hazel ➔</a>
+				&
+				<a href="https://www.matthewstanciu.com/" target="_blank"
+					>Matthew ➔</a
+				>
+				for testing and helping buy pool noodles and PVC pipe.
+			</p>
+		</main>
+	</body>
 </html>
