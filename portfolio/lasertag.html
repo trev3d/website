@@ -17,14 +17,8 @@
 			<h3>
 				Turn any space into a laser tag arena
 				<p>
-					<img
-						class="software-icon"
-						src="/resources/icons/meta.png"
-					/>
-					<img
-						class="software-icon"
-						src="/resources/icons/unity.png"
-					/>
+					<img class="software-icon" src="/resources/icons/meta.png" />
+					<img class="software-icon" src="/resources/icons/unity.png" />
 					<img class="software-icon" src="/resources/icons/git.png" />
 				</p>
 			</h3>
@@ -39,10 +33,7 @@
 				></iframe>
 			</div>
 
-			<p>
-				A multiplayer mixed reality game that 'just works' with minimal
-				setup.
-			</p>
+			<p>A multiplayer mixed reality game that 'just works' with minimal setup.</p>
 
 			<ul>
 				<li>1. Everyone puts on their headset</li>
@@ -57,9 +48,7 @@
 			</h3>
 			<p></p>
 			<h3>
-				<a href="https://github.com/anaglyphs/lasertag" target="_blank">
-					GitHub repo ➔</a
-				>
+				<a href="https://github.com/anaglyphs/lasertag" target="_blank"> GitHub repo ➔</a>
 			</h3>
 
 			<div class="webvid">
@@ -76,7 +65,7 @@
 
 			<div class="webvid verticalvid">
 				<iframe
-					src="https://player.vimeo.com/video/1081544753?
+					src="https://player.vimeo.com/video/1176262700?
 		autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
 					allow="autoplay; fullscreen; picture-in-picture"
 					style="height: 100%"
@@ -85,26 +74,24 @@
 			</div>
 
 			<p>
-				The game continuously scans players' environment without any
-				prior setup. This reduces friction & time-to-fun and means the
-				game responds to environment changes (i.e. doors opening and
-				closing)
+				The game continuously scans players' environment without any prior setup. This
+				reduces friction & time-to-fun and means the game responds to environment changes
+				(i.e. doors opening and closing)
 			</p>
 
 			<p>
-				This works by projecting depth frames into a large TSDF 3D
-				texture. Bullets raymarch through the TSDF to detect collisions.
+				This works by projecting depth frames into a large TSDF 3D texture. Bullets raymarch
+				through the TSDF to detect collisions.
 			</p>
 
 			<p>
-				I'd eventually like to use the TSDF for multiplayer localization
-				and drift correction, but I'm still getting a handle on some
-				necessary mathematics.
+				I'd eventually like to use the TSDF for multiplayer localization and drift
+				correction, but I'm still getting a handle on some necessary mathematics.
 			</p>
 
 			<p>
-				While Lasertag doesn't yet feature this, I'm also experimenting
-				with meshing for use with physics & NPC pathfinding.
+				While the release version of Lasertag doesn't yet feature this, I'm also
+				experimenting with meshing for use with physics & NPC pathfinding.
 			</p>
 
 			<p>
@@ -121,20 +108,25 @@
 			<div class="webvid">
 				<iframe
 					src="https://www.youtube.com/embed/yxDhCg-q0JU?t=26s"
-					allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+					allow="
+						autoplay;
+						clipboard-write;
+						encrypted-media;
+						picture-in-picture;
+						web-share;
+					"
 					allowfullscreen
 				></iframe>
 			</div>
 
 			<p>
-				Laser bullets glow and cast light on the real environment using
-				inverted spheres that sample environment depth & normals.
+				Laser bullets glow and cast light on the real environment using inverted spheres
+				that sample environment depth & normals.
 			</p>
 
 			<p>
-				Because they're alpha-blended and often cover the entire view,
-				these can cause frame drops. I'm investigating faster
-				techniques.
+				Because they're alpha-blended and often cover the entire view, these can cause frame
+				drops. I'm investigating faster techniques.
 			</p>
 		</main>
 	</body>
