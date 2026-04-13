@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Julian Triveri Portfolio</title>
+		<link rel="stylesheet" href="/resources/style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div id="backgroundGlyph"></div>
+
+		<a href="/mobilenav.html" id="navmobile"> Menu </a>
+		<iframe id="navframe" src="/nav.html"></iframe>
+
+		<main>
+			<h1>Collab</h1>
+			<h3>
+				A practical mixed reality classroom for Meta Quest 3
+				<p>
+					<img class="software-icon" src="/resources/icons/meta.png" />
+					<img class="software-icon" src="/resources/icons/unity.png" />
+					<img class="software-icon" src="/resources/icons/git.png" />
+				</p>
+			</h3>
+
+			<div class="webvid">
+				<iframe
+					src="https://player.vimeo.com/video/1182704205?h=177cbd938d
+				&autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				Collab is a mixed reality classroom app for in-person lectures developed by the
+				<a href="https://www.rcac.purdue.edu/envision" target="_blank"
+					>Purdue University Envision Center ➔</a
+				>. I was responsible for revamping the UX, interface, and implementing several
+				graphics and mixed-reality specific features.
+			</p>
+
+			<p>
+				These features have since been incorporated into the Meta Quest SDK — something I'm
+				told I helped demonstrate the value of!
+			</p>
+
+			<h3>
+				<a href="https://envision.center/collabxr" target="_blank"> Website ➔</a>
+			</h3>
+
+			<h2>Camera access workaround</h2>
+
+			<div class="webvid verticalvid">
+				<iframe
+					src="https://player.vimeo.com/video/1182708803?h=abb36973b2
+				&autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				Setting up 30 headsets for classes was once a painful process that would often take
+				15+ minutes. Our old connection flow had you manually type and enter a room code.
+				Spatial alignment via Meta's shared anchor API was also unreliable.
+			</p>
+
+			<p>
+				We wanted to use QR codes to simultaneously connect and align headsets, but Meta did
+				not allow you to access the front RGB cameras (in 2024). However, I circumvented
+				this restriction with a vanilla Android screen capture API to capture and process
+				the displayed passthrough feed.
+			</p>
+
+			<p>
+				Using QR codes with this workaround, setup times dropped from 15 minutes to just a
+				couple, and spatial alignment was perfectly reliable.
+			</p>
+
+			<h2>Depth raycasting</h2>
+
+			<div class="webvid verticalvid">
+				<iframe
+					src="https://player.vimeo.com/video/1182729674?h=9b3433a8bf
+				&autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				While the Meta Quest can scan the shape of your environment, it's an annoying
+				process, so we avoided using it for the sake of quick setup time. However, this
+				prevented us from placing content anywhere but the floor.
+			</p>
+
+			<p>
+				I implemented raycasting against the depth occlusion texture for no-frills content
+				placement. This let, for example, an entomology lecturer place small virtual bugs on
+				a table for their students to see.
+			</p>
+
+			<h2>Virtual sky/planetarium</h2>
+
+			<a href="collab/sky.jpg" target="_blank"><img src="collab/sky.jpg" /></a>
+
+			<p>
+				The lecturer has the option to replace the ceiling with a virtual sky in order to
+				show large visualizations (e.g. a scale model of the Hubble Space Telescope) that
+				normally wouldn't fit into the room. I implemented this with a large plane that
+				overrides the depth estimation texture used for visual occlusion.
+			</p>
+
+			<div class="webvid">
+				<iframe
+					src="https://player.vimeo.com/video/1182735188?h=5be84df14a
+				&autoplay=1&loop=1&color=fee400&byline=0&portrait=0&muted=1"
+					allow="autoplay; fullscreen; picture-in-picture"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<p>
+				This stemmed from an early exploration into complete environment replacement, but
+				low depth texture resolution and our desire to avoid requiring a room scan made this
+				impractical. However, ceilings are always in the same place no matter the room
+				layout, so slapping a depth-overriding plane three meters above the floor was simple
+				and functional.
+			</p>
+		</main>
+	</body>
+</html>

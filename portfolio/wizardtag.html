@@ -17,14 +17,8 @@
 			<h3>
 				Magic dueling 101 for first-year wizards
 				<p>
-					<img
-						class="software-icon"
-						src="/resources/icons/meta.png"
-					/>
-					<img
-						class="software-icon"
-						src="/resources/icons/unity.png"
-					/>
+					<img class="software-icon" src="/resources/icons/meta.png" />
+					<img class="software-icon" src="/resources/icons/unity.png" />
 					<img class="software-icon" src="/resources/icons/git.png" />
 				</p>
 			</h3>
@@ -40,9 +34,8 @@
 			</div>
 
 			<p>
-				Every year, Purdue University accepts proposals from students
-				for freshmen orientation activities. This was my accepted
-				proposal for the 2025
+				Every year, Purdue University accepts proposals from students for freshmen
+				orientation activities. This was my accepted proposal for the 2025
 				<a
 					href="https://centers.purdue.edu/fusion-studio/bgr-entertainment-challenge/"
 					target="_blank"
@@ -52,55 +45,44 @@
 
 			<p>
 				Wizardtag is a fork of the
-				<a href="lasertag.html">Lasertag project</a> created
-				specifically for this event. It brings all the same tech,
-				including live environment scanning and environment lighting
-				effects, but swaps out the laser guns for voice-activated magic
-				wands.
+				<a href="lasertag.html">Lasertag project</a> created specifically for this event. It
+				brings all the same tech, including live environment scanning and environment
+				lighting effects, but swaps out the laser guns for voice-activated magic wands.
 			</p>
 			<p>
-				The app isn't currently public, but I'll eventually merge its
-				features back into the main game.
+				The app isn't currently public, but I'll eventually merge its features back into the
+				main game.
 			</p>
 
 			<h2>Speech recognition</h2>
 
-			<a href="wizardtag/zap.png" target="_blank"
-				><img src="wizardtag/zap.png"
-			/></a>
+			<a href="wizardtag/zap.png" target="_blank"><img src="wizardtag/zap.png" /></a>
 
 			<p>
-				Players yell one of three spells − fireball, lightning, or
-				shield − and compete to score the most eliminations against the
-				opposing team in two minutes.
+				Players yell one of three spells − fireball, lightning, or shield − and compete to
+				score the most eliminations against the opposing team in two minutes.
 			</p>
 
 			<p>
 				For speech recognition, I used
-				<a href="https://alphacephei.com/vosk/" target="_blank"
-					>Vosk ➔</a
-				>, an on-device speech recognition model. While Vosk isn't as
-				responsive as a bespoke wake-word model might be, latency is
-				still low enough for spells to feel suitably responsive.
+				<a href="https://alphacephei.com/vosk/" target="_blank">Vosk ➔</a>, an on-device
+				speech recognition model. While Vosk isn't as responsive as a bespoke wake-word
+				model might be, latency is still low enough for spells to feel suitably responsive.
 			</p>
 
 			<h2>Marker-based spatial localization</h2>
 
-			<a href="wizardtag/tag.png" target="_blank"
-				><img src="wizardtag/tag.png"
-			/></a>
+			<a href="wizardtag/tag.png" target="_blank"><img src="wizardtag/tag.png" /></a>
 
 			<p>
-				For instant and consistent spatial alignment, I used AprilTags.
-				Each headset finds the best fit between its own noisy tag
-				readings and corresponding known correct poses, spatially
-				anchoring virtual elements like respawn points and aligning each
+				For instant and consistent spatial alignment, I used AprilTags. Each headset finds
+				the best fit between its own noisy tag readings and corresponding known correct
+				poses, spatially anchoring virtual elements like respawn points and aligning each
 				player's coordinate space.
 			</p>
 			<p>
-				For my purposes, this was faster and more robust than using
-				Meta's spatial anchors, which occasionally fail to localize and
-				are prone to drift over time.
+				For my purposes, this was faster and more robust than using Meta's spatial anchors,
+				which occasionally fail to localize and are prone to drift over time.
 			</p>
 
 			<h2>Credits & attribution</h2>
@@ -110,29 +92,24 @@
 			/></a>
 
 			<p>
-				Friends and I themed the event as a magic dueling class in a
-				fictional Harry-Potter-esque wizarding school version of Purdue.
-				I commissioned a friend (Keith) to draw this poster, and another
-				(Alex) played the role of a wizard professor giving the
-				'lectures' (game tutorial).
+				Friends and I themed the event as a magic dueling class in a fictional
+				Harry-Potter-esque wizarding school version of Purdue. I commissioned a friend
+				(Keith) to draw this poster, and another (Alex) played the role of a wizard
+				professor giving the 'lectures' (game tutorial).
 			</p>
 
 			<p>
-				While I did everything on the developement side, the event
-				itself would not have been a success without Alex, Keith,
-				Andres, & Paige. Thank you guys so much for the hours you spent
-				making this possible!
+				While I did everything on the developement side, the event itself would not have
+				been a success without Alex, Keith, Andres, & Paige. Thank you guys so much for the
+				hours you spent making this possible!
 			</p>
 
 			<p>
 				Purdue University's
-				<a
-					href="https://centers.purdue.edu/fusion-studio/"
-					target="_blank"
+				<a href="https://centers.purdue.edu/fusion-studio/" target="_blank"
 					>Fusion Studio ➔
 				</a>
-				generously funded this project with a grant as part of their
-				student orientation
+				generously funded this project with a grant as part of their student orientation
 				<a
 					href="https://centers.purdue.edu/fusion-studio/bgr-entertainment-challenge/"
 					target="_blank"
@@ -152,21 +129,16 @@
 
 			<p>
 				Speech recognition by
-				<a href="https://alphacephei.com/vosk/" target="_blank"
-					>AlphaCephei (Vosk) ➔</a
-				>
+				<a href="https://alphacephei.com/vosk/" target="_blank">AlphaCephei (Vosk) ➔</a>
 			</p>
 
 			<p>
 				This project was inspired by
-				<a
-					href="https://store.steampowered.com/app/3716600/Mage_Arena/"
-					target="_blank"
+				<a href="https://store.steampowered.com/app/3716600/Mage_Arena/" target="_blank"
 					>Mage Arena ➔</a
 				>
 				and
-				<a href="https://x.com/wandduel" target="_blank">Wand Duel ➔</a
-				>. Check em out!
+				<a href="https://x.com/wandduel" target="_blank">Wand Duel ➔</a>. Check em out!
 			</p>
 		</main>
 	</body>
