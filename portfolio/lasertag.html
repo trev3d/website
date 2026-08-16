@@ -15,7 +15,7 @@
 		<main>
 			<h1>Lasertag</h1>
 			<h3>
-				Turn any space into a laser tag arena
+				Mixed reality that finally 'just works'
 				<p>
 					<img class="software-icon" src="/resources/icons/meta.png" />
 					<img class="software-icon" src="/resources/icons/unity.png" />
@@ -33,15 +33,6 @@
 				></iframe>
 			</div>
 
-			<p>A multiplayer mixed reality game that 'just works' with minimal setup.</p>
-
-			<ul>
-				<li>1. Everyone puts on their headset</li>
-				<li>2. Everyone connects to the same WiFi network</li>
-				<li>3. Everyone launches the app</li>
-				<li>4. One person presses the 'host' button</li>
-			</ul>
-
 			<h3>
 				<a href="https://anaglyph.dev" target="_blank"> Website ➔</a>
 			</h3>
@@ -50,15 +41,18 @@
 				<a href="https://github.com/anaglyphs/lasertag" target="_blank"> GitHub repo ➔</a>
 			</h3>
 
-			<div class="webvid">
-				<iframe
-					src="https://player.vimeo.com/video/1071128174?
-					autoplay=0&loop=0&color=fee400&byline=0&portrait=0&muted=0"
-					allow="autoplay; fullscreen; picture-in-picture"
-					style="height: 100%"
-					allowfullscreen
-				></iframe>
-			</div>
+			<p>
+				Multiplayer AR FPS games exist on Meta Quest, but you need to fiddle with room
+				mapping, spatial anchors, and IP addresses/room codes. Stuff that makes hopping into
+				a game with friends a chore.
+			</p>
+
+			<p>
+				With <i>Lasertag</i> (a lazy project folder name that accidentally stuck) I've gone
+				to extremes to streamline onboarding and UX, including writing my own environment
+				mapper that runs <i>while</i> you play instead of relying on Meta's painstaking room
+				setup process.
+			</p>
 
 			<h2 id="scanning">Continuous environment scanning</h2>
 
@@ -73,36 +67,32 @@
 			</div>
 
 			<p>
-				The game continuously scans players' environment without any prior setup. This
-				reduces friction & time-to-fun and means the game responds to environment changes
-				(i.e. doors opening and closing)
+				This all works on the GPU. I take depth frames from Meta's DepthAPI and integrate
+				them into a TSDF. The TSDF is semi-sparse with a small lookup table volume that
+				indexes 3D world coordinates to the TSDF chunks. This all takes around 128 MB of
+				memory.
 			</p>
 
 			<p>
-				This works by projecting depth frames into a large TSDF 3D texture. Bullets raymarch
-				through the TSDF to detect collisions.
+				I then mesh the volume on the CPU with a surface-net job + a
+				<a href="https://github.com/RamType0/Meshia.MeshSimplification" target="_blank"
+					>third party mesh decimation job</a
+				>. Decimation ensures triangle counts are low enough for rendering the chunks in a
+				depth-occlusion pass and using them for nav-mesh generation.
 			</p>
 
 			<p>
 				I'd eventually like to use the TSDF for multiplayer localization and drift
-				correction, but I'm still getting a handle on some necessary mathematics.
+				correction, but I'm still getting a handle on some necessary math.
 			</p>
 
 			<p>
-				While the release version of Lasertag doesn't yet feature this, I'm also
-				experimenting with meshing for use with physics & NPC pathfinding.
+				I still need to properly profile all of this, but it runs pretty efficiently at a
+				glance. Lasertag holds a steady 72fps during play with CPU and GPU usage hovering
+				around high 40s to low 50s. Any GPU spikes are usually due to the depth lights...
 			</p>
 
-			<p>
-				<a
-					href="https://www.uploadvr.com/developer-implemented-continuous-scene-meshing-quest-3-lasertag/"
-					target="_blank"
-				>
-					UploadVR covered this in an article ➔</a
-				>
-			</p>
-
-			<h2 id="depth-lighting">Environment shading</h2>
+			<h2 id="depth-lighting">Depth-based relighting</h2>
 
 			<div class="webvid">
 				<iframe
@@ -119,14 +109,22 @@
 			</div>
 
 			<p>
-				Laser bullets glow and cast light on the real environment using inverted spheres
-				that sample environment depth & normals.
+				Laser bullets glow and cast light on the real environment with depth & normal
+				sampling inverted spheres. They're just naive deferred lights. These are pretty
+				inefficient with multiple texture samples per sphere. TODO FIX!
 			</p>
 
-			<p>
-				Because they're alpha-blended and often cover the entire view, these can cause frame
-				drops. I'm investigating faster techniques.
-			</p>
+			<h2 id="trailer">Trailer</h2>
+
+			<div class="webvid">
+				<iframe
+					src="https://player.vimeo.com/video/1071128174?
+					autoplay=0&loop=0&color=fee400&byline=0&portrait=0&muted=0"
+					allow="autoplay; fullscreen; picture-in-picture"
+					style="height: 100%"
+					allowfullscreen
+				></iframe>
+			</div>
 		</main>
 	</body>
 </html>

@@ -45,23 +45,18 @@
 
 			<p>
 				Wizardtag is a fork of the
-				<a href="lasertag.html">Lasertag project</a> created specifically for this event. It
-				brings all the same tech, including live environment scanning and environment
-				lighting effects, but swaps out the laser guns for voice-activated magic wands.
+				<a href="lasertag.html">Lasertag project</a> created specifically for this event.
+				Purdue liked Lasertag, minus the 'simulated gun violence,' so I swapped out the
+				laser guns for voice-activated magic wands :P
 			</p>
 			<p>
 				The app isn't currently public, but I'll eventually merge its features back into the
 				main game.
 			</p>
 
-			<h2>Speech recognition</h2>
+			<h2>Incantations</h2>
 
 			<a href="wizardtag/zap.png" target="_blank"><img src="wizardtag/zap.png" /></a>
-
-			<p>
-				Players yell one of three spells − fireball, lightning, or shield − and compete to
-				score the most eliminations against the opposing team in two minutes.
-			</p>
 
 			<p>
 				For speech recognition, I used
@@ -70,15 +65,21 @@
 				model might be, latency is still low enough for spells to feel suitably responsive.
 			</p>
 
+			<p>
+				Players yell one of three spells − fireball, lightning, or shield − and compete to
+				score the most eliminations against the opposing team in two minutes.
+			</p>
+
 			<h2>Marker-based spatial localization</h2>
 
 			<a href="wizardtag/tag.png" target="_blank"><img src="wizardtag/tag.png" /></a>
 
 			<p>
-				For instant and consistent spatial alignment, I used AprilTags. Each headset finds
-				the best fit between its own noisy tag readings and corresponding known correct
-				poses, spatially anchoring virtual elements like respawn points and aligning each
-				player's coordinate space.
+				I use AprilTags for instant and consistent spatial alignment. Each headset finds the
+				best fit between its own noisy tag readings their known correct positions, spatially
+				anchoring virtual elements and aligning players' coordinate spaces. I compensate for
+				latency with `OVRPlugin.GetNodePoseStateAtTime` so tag reading poses don't lag
+				behind the head pose.
 			</p>
 			<p>
 				For my purposes, this was faster and more robust than using Meta's spatial anchors,
