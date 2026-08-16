@@ -15,7 +15,7 @@
 		<main>
 			<h1>Lasertag</h1>
 			<h3>
-				Mixed reality that finally 'just works'
+				Multiplayer mixed reality that 'just works'
 				<p>
 					<img class="software-icon" src="/resources/icons/meta.png" />
 					<img class="software-icon" src="/resources/icons/unity.png" />
@@ -42,16 +42,21 @@
 			</h3>
 
 			<p>
-				Multiplayer AR FPS games exist on Meta Quest, but you need to fiddle with room
-				mapping, spatial anchors, and IP addresses/room codes. Stuff that makes hopping into
-				a game with friends a chore.
+				Several multiplayer AR shooter games exist on Meta Quest, but you need to fuss with
+				room mapping, spatial anchors, IP addresses/room codes, etc. Setting up a game is a
+				chore, especially with friends who aren't familiar with XR.
 			</p>
 
 			<p>
-				With <i>Lasertag</i> (a lazy project folder name that accidentally stuck) I've gone
-				to extremes to streamline onboarding and UX, including writing my own environment
-				mapper that runs <i>while</i> you play instead of relying on Meta's painstaking room
-				setup process.
+				With <i>Lasertag</i> (lazy project folder name that stuck, sorry) I've obsessed over
+				streamlining the UX, going as far as writing my own environment mapper that runs
+				<i>while</i> you play instead of relying on Meta's painstaking room setup process.
+			</p>
+
+			<p>
+				The only setup required is a shared WiFi connection. One person hosts a session, and
+				all the other headsets connect via bluetooth discovery and automatically align.
+				Together, the headsets scan and synchronize their shared physical environment.
 			</p>
 
 			<h2 id="scanning">Continuous environment scanning</h2>
@@ -67,22 +72,21 @@
 			</div>
 
 			<p>
-				This all works on the GPU. I take depth frames from Meta's DepthAPI and integrate
-				them into a TSDF. The TSDF is semi-sparse with a small lookup table volume that
-				indexes 3D world coordinates to the TSDF chunks. This all takes around 128 MB of
-				memory.
+				Scanning works on the GPU with a semi-sparse TSDF divided in chunks. The scanner has
+				a fixed amount of data it can store, but it avoids reserving any of that for totally
+				empty chunks. With 128 MB of fixed memory the scanner can store more than anyone
+				will probably ever need.
 			</p>
 
 			<p>
-				I then mesh the volume on the CPU with a surface-net job + a
+				I then mesh the chunks on the CPU with a surface-net job and a
 				<a href="https://github.com/RamType0/Meshia.MeshSimplification" target="_blank"
 					>third party mesh decimation job</a
-				>. Decimation ensures triangle counts are low enough for rendering the chunks in a
-				depth-occlusion pass and using them for nav-mesh generation.
+				>. Collision, visual occlusion, and nav-mesh generation rely on these meshes.
 			</p>
 
 			<p>
-				I'd eventually like to use the TSDF for multiplayer localization and drift
+				I'd eventually like to use the scan for multiplayer localization and drift
 				correction, but I'm still getting a handle on some necessary math.
 			</p>
 
